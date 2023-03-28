@@ -1,3 +1,5 @@
+#Merkle trees :
+
 Benefits (for a big NFT minting whitelist):
 - Allow whitelisted users to mint NFT
 - Allow the SC to store all whitelisted users without consuming too much gas.
