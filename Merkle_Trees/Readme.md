@@ -5,5 +5,5 @@ Benefits (for a big NFT minting whitelist):
 To use it in our smart contract we use the MerkleProof.sol contract from Openzeppelin :
 openzeppelin/contracts/utils/cryptography/MerkleProof.sol
 
-In the frontend, we will have to use merkletreejs to generate our root and proof :
+In the frontend and deployment script, we will have to use merkletreejs to generate our root, leaf and proof :
 const { MerkleTree } = require('merkletreejs');
