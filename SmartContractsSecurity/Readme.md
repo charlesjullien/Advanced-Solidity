@@ -4,7 +4,7 @@ The Vulnerable contracts contracts in this repo are from https://github.com/cles
 
 other useful link : https://consensys.github.io/smart-contract-best-practices/attacks/
 
-Here is an overview of my nderstanding of the existing attack types :
+Here is an overview of my understanding of the existing attack types :
 
 - **DoS** ("Denial of Service"): A malicious contract can block the usage of a DoS vulnerable contract by two types of means : gas limit or unexpected error. 
 some examples :
