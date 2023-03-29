@@ -1,4 +1,4 @@
-Smart contract security is essential in blockchain development as we technically cannot modify or fix a classic contract once it's deployed.
+## Smart contract security is essential in blockchain development as we technically cannot modify or fix a classic contract once it's deployed.
 
 Many types of attacks exists such as :
 
