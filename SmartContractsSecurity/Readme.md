@@ -1,5 +1,7 @@
 ## Smart contract security is essential in blockchain development as we technically cannot modify or fix a classic contract once it's deployed.
 
+The Vulnerable contracts contracts in this repo are from https://github.com/clesaege/HackSmartContract/blob/master/contracts/SolidityHackingWorkshopV8.sol which is an exercise to spot the vulnerabilities and acquire good security practices.
+
 Many types of attacks exists such as :
 
 - **DoS** ("Denial of Service"): A malicious contract can block the usage of a DoS vulnerable contract by two types of means : gas limit or unexpected error. 
