@@ -5,11 +5,11 @@ Many types of attacks exists such as :
 - **DoS** ("Denial of Service"): A malicious contract can block the usage of a DoS vulnerable contract by two types of means : gas limit or unexpected error. 
 some examples :
 
-*Unexpected* : 
-A bidding contract can block, if when a higher bid is placed, there is a direct refund of the previous leader, and that this refund cannot be done because it is blocked by the attacker (on a contract without fallback and with an attacking address unable to receive funds).
+    *Unexpected* : 
+      A bidding contract can block, if when a higher bid is placed, there is a direct refund of the previous leader, and that this refund cannot be done       because it is blocked by the attacker (on a contract without fallback and with an attacking address unable to receive funds).
 
-*Gas limit* : 
-A voting contract where whitelisted users can add proposals to vote for them later on... When the votes are tallied, the contract iterates on all proposals... If an attacker wants to perfor a DoS attack, he can just send a lot of proposals earlier to setup a huge proposal array on the SC and during iteration, a gas limit will be reached and the SC won't be able to tally votes.
+    *Gas limit* : 
+      A voting contract where whitelisted users can add proposals to vote for them later on... When the votes are tallied, the contract iterates on all         proposals... If an attacker wants to perfor a DoS attack, he can just send a lot of proposals earlier to setup a huge proposal array on the SC and       during iteration, a gas limit will be reached and the SC won't be able to tally votes.
 
 - **Reentrancy** : the attacker creates his own contract and calls a vulnerable function of the attacked contract from here; once the vulnerable function is beeing executed, a fallback function from the attacker is being triggered to call again the vulnerable function without waiting for the current function execution to end and a loop is installed. The attacker can, by doing so, manipulate the datas inside the smart contract to his advantage.
 A good practice is, for instance to setup flags like booleans at the begining and end of the function, add more 'requires' to check current datas, use temporary variables to store datas or use ReeantrancyGuards from Openzeppelin.
