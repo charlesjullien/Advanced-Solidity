@@ -2,6 +2,8 @@
 
 The Vulnerable contracts contracts in this repo are from https://github.com/clesaege/HackSmartContract/blob/master/contracts/SolidityHackingWorkshopV8.sol which is an exercise to spot the vulnerabilities and acquire good security practices.
 
+other useful link : https://consensys.github.io/smart-contract-best-practices/attacks/
+
 Many types of attacks exists such as :
 
 - **DoS** ("Denial of Service"): A malicious contract can block the usage of a DoS vulnerable contract by two types of means : gas limit or unexpected error. 
@@ -22,3 +24,7 @@ A good practice for such contracts is to multiply the off chains sources of info
 - **Front running** : before getting executed by validators, transactions are in the mempool (check https://txstreet.com/v/eth to have a visual insight of what is a mempool). While those tx are pending for approval, network observers can see the content of those txs and init a tx to be executed before the pending attacked one in order, for example, to win a 'debate' or have a timing advantage over the targeted user. This can be done by different means like, init an identical or better tx with an higher gas price, the attacker can also insert himself between the selling price and the purchase with a higher gas price, or prevent someone from performing a tx by overloading the block gas limit.
 
 - **TimeStamp Dependance** : We often need the block.timestamp() to, for example, calculate easily a random numbee, however, the timestamp can be manipulated (to some extent) by the miner because he may or may not choose to mine the block he has discovered. 
+
+- **Insecure arithmetic** : before solidity 0.8.0 contracts, there was overflow and underflow in uints : a uint goes from à to 2^256 and 2^256 + 1 went to 0, 2^256 + 2 to 1, 2^256 + 10 to 9... etc, which is obviously not safe, but now with ^0.8.0, the overflows and underflows trigger a revert. however : careful to side effects... if we use a uint8 for a counter in a game as an example and a user sets the counter to 255, the other players won't be able to play properly as the limit is reached. (uint8 is from 0 to 255).
+
+- **Force feeding** :The force-feeding vulnerability occurs when a contract incorrectly accepts invalid or unexpected data inputs, which can allow an attacker to force the contract to execute malicious code or make unexpected decisions.
