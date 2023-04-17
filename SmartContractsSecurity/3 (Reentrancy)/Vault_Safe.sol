@@ -17,7 +17,7 @@ contract Vault {
     /// @dev Solution : added a boolean + require to verify the call has been done properly.
     function redeem() public {
         (bool sent, bytes memory data) = msg.sender.call{ value: balances[msg.sender] }("");
-		require(sent)
+	require(sent);
         balances[msg.sender] = 0;
     }
 }
